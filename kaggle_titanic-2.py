@@ -167,18 +167,17 @@ submission = pd.read_csv('./titanic/gender_submission.csv')
 submission['Survived'] = output
 submission.to_csv('./titanic/gender_submission.csv', index=False)
 
-"""Epoach 200 lr =0.001<br>
+"""
+Epoach 200 lr =0.001
 *   64  50 2 88%   0.74641
 *   40 100 2 87%.  0.76076
 *   64 100 2 87%.  0.77033
-*  80 100 2 88%.  0.74880
+*   80 100 2 88%.  0.74880
 *   64 110 2 87%.  0.76555
 *   64 125 2 87%.  0.75837
 *   64 150 2 88%.  0.73684
-<br>
 
-Epoach 200 lr =0.015<br>
+Epoach 200 lr =0.015
 *   64 100 2 61%.  0.62200
-
 
 """
