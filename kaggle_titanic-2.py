@@ -95,7 +95,7 @@ test_data = torch.from_numpy(titanic_test_data.values).float()
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 
-# 进行数据封装，用于批训练
+# 数据封装
 train_dataset = TensorDataset(train_data, train_label)
 trainLoader = DataLoader(train_dataset, batch_size=4,
                          shuffle=True, num_workers=2)
@@ -147,10 +147,8 @@ for epoch in range(200):
         #     running_loss = 0.0
 print('Finish Traning! Total cost time: ', time.time()-start)
 
-# 初始化数值
 correct = 0
 total = 0
-# evaluating时不计算导数
 with torch.no_grad():
     for data in trainLoader:
         inputs, labels = data
@@ -168,6 +166,7 @@ submission['Survived'] = output
 submission.to_csv('./titanic/gender_submission.csv', index=False)
 
 """
+不同超参数时的正确率
 Epoach 200 lr =0.001
 *   64  50 2 88%   0.74641
 *   40 100 2 87%.  0.76076
